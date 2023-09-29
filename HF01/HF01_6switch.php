@@ -1,5 +1,5 @@
 <?php
-    $selectedMonth = "dec";
+    $selectedMonth = "december";
     $editedMonth = strtolower(trim($selectedMonth));
 
     switch ($editedMonth) {

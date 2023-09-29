@@ -8,8 +8,8 @@
     $c4 = $a / $b;
     $c5 = $a ** $b;
     echo "a = $a <br> b = $b<br><br>";
-    echo "a + b = $c1<br>";
-    echo "a - b = $c2<br>";
-    echo "a * b = $c3<br>";
-    echo "a / b = $c4<br>";
-    echo "a ^ b = $c5<br>";
+    echo "$a + $b = $c1<br>";
+    echo "$a - $b = $c2<br>";
+    echo "$a * $b = $c3<br>";
+    echo "$a / $b = $c4<br>";
+    echo "$a ^ $b = $c5<br>";

@@ -1,7 +1,7 @@
 <?php
     $a = 5;
     $b = 0;
-    $sign = "a";
+    $sign = "/";
 
     switch ($sign) {
         case "+":
