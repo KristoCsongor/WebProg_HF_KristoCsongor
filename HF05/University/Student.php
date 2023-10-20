@@ -12,9 +12,8 @@ class Student
 {
     private string $name;
     private string $studentNumber;
+    private array $grades = [];
 
-
-    // TODO Generate constructor with both arguments.
     /**
      * @param string $name
      * @param string $studentNumber
@@ -25,7 +24,6 @@ class Student
         $this->studentNumber = $studentNumber;
     }
 
-    // TODO Generate getters and setters for both arguments
     public function getName(): string
     {
         return $this->name;
@@ -44,5 +42,36 @@ class Student
     public function setStudentNumber(string $studentNumber): void
     {
         $this->studentNumber = $studentNumber;
+    }
+
+    public function getGrades(): array
+    {
+        return $this->grades;
+    }
+
+    public function setGrades(array $grades): void
+    {
+        $this->grades = $grades;
+    }
+
+    public function setGrade(Subject $subject, float $grade): void
+    {
+        $this->grades[$subject->getCode()] = $grade;
+    }
+
+    public function getAvgGrade(): float|int
+    {
+        $sum = 0;
+        foreach ($this->getGrades() as $grade) {
+            $sum += $grade;
+        }
+        return $sum / count($this->getGrades());
+    }
+
+    public function printGrades(): void
+    {
+        foreach ($this->getGrades() as $subjectCode => $grade) {
+            echo $subjectCode . " - " . $grade . "<br>";
+        }
     }
 }

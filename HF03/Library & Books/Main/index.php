@@ -1,8 +1,10 @@
 <?php
 
-require_once "Book.php";
-require_once "Library.php";
-require_once "Author.php";
+namespace Main;
+
+include "Loader.php";
+/*use Classes\Library;
+use Classes\Book;*/
 
 $library = new Library();
 $author = $library->addAuthor('Jack London');

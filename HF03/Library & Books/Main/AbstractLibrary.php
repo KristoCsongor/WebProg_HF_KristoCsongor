@@ -1,5 +1,7 @@
 <?php
 
+namespace Main;
+
 /**
  * Class AbstractLibrary
  */
@@ -20,7 +22,7 @@ abstract class AbstractLibrary
         $this->authors = $authors;
     }
 
-     // TODO Generate getters and setters of properties
+    // TODO Generate getters and setters of properties
 
 
     /**

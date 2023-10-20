@@ -5,7 +5,18 @@ abstract class AbstractUniversity
     /**
      * @var Subject[]
      */
-    public array $subjects = [];
+    protected array $subjects = [];
+
+    public function getSubjects(): array
+    {
+        return $this->subjects;
+    }
+
+    public function setSubjects(array $subjects): void
+    {
+        $this->subjects = $subjects;
+    }
+
 
     /**
      * Method accepts the name and code of the Subject, creates instance of the class,

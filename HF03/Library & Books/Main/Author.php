@@ -1,6 +1,8 @@
 <?php
 
 
+namespace Main;
+
 class Author
 {
     public string $name;
@@ -40,8 +42,8 @@ class Author
 
     /**
      * @param string $title
-     * @param float  $price
-     * @return \Book
+     * @param float $price
+     * @return \Vmi\Book
      */
     public function addBook(string $title, float $price): Book
     {

@@ -31,26 +31,23 @@ class ArrayManipulator
         }
     }
 
-    public function __unset(string $name): void
+    public function __unset(string $property): void
     {
-        // TODO: Implement __unset() method.
+        if (property_exists($this, $property)) {
+            unset($this->$property);
+        } else {
+            throw new NonExistentField();
+        }
     }
 
     public function __toString(): string
     {
-        /*
-        $str = "";
-        array_walk($this->data, function($element) use ($str) {
-            $str .= $element;
-        });
-        return $str;
-        */
-        return $this;
+        return json_encode($this->data);
     }
 
     public function __clone(): void
     {
-        // TODO: Implement __clone() method.
+        $this->data = array("cloneOne" => 1, "cloneTwo" => 2);
     }
 
 }

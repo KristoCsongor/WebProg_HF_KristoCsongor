@@ -1,5 +1,6 @@
 <?php
-require_once "AbstractLibrary.php";
+
+namespace Main;
 
 class Library extends AbstractLibrary
 {

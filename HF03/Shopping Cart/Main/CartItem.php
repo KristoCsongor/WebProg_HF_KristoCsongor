@@ -1,4 +1,7 @@
 <?php
+
+namespace Main;
+
 class CartItem
 {
     private Product $product;

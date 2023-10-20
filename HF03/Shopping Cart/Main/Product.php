@@ -1,5 +1,7 @@
 <?php
 
+namespace Main;
+
 class Product
 {
     private int $id;

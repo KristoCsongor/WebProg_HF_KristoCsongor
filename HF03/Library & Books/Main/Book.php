@@ -1,6 +1,8 @@
 <?php
 
 
+namespace Main;
+
 class Book
 {
     public string $title;
