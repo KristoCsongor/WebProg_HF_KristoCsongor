@@ -1,0 +1,35 @@
+<?php
+session_start();
+
+$randomszam = rand(1, 10);
+if (!isset($_SESSION['randomszam'])) {
+    //setcookie('randomszam', $randomszam, time() + 3600 * 24 * 365);
+    $_SESSION["randomszam"] = $randomszam;
+}
+
+
+if (isset($_POST['elkuldott'])) {
+    if ($_POST['talalgatas'] > $_SESSION["randomszam"]) {
+        echo "<h3>A szám kisebb!</h3>";
+    } else if ($_POST['talalgatas'] < $_SESSION["randomszam"]) {
+        echo "<h3>A szám nagyobb!</h3>";
+    } else {
+        echo "<br>A szám, amire gondoltam:" . $_SESSION["randomszam"] . ", Ön nyert! Játsszon újra!<hr>";
+        $ujszam = rand(1, 10);
+        while ($ujszam === $randomszam) {
+            $newNumber = rand(1, 10);
+        }
+        // setcookie('randomszam', $ujszam, time() + 3600 * 24 * 365);
+        $_SESSION["randomszam"] = $ujszam;
+    }
+}
+?>
+<form method="POST" action="">
+    <input type="hidden" name="elkuldott" value="">
+    Melyik számra gondoltam 1 és 10 között?
+    <input name="talalgatas" type="text">
+    <br>
+    <br>
+    <input type="submit" value="Elküld">
+</form>
+

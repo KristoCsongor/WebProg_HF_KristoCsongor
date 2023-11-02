@@ -40,7 +40,7 @@ $testSubject = $univ->addSubject('401', 'Test Subject');
 try {
     $univ->deleteSubject($testSubject);
     $univ->deleteSubject($webProg);
-} catch(DeleteSubjectException $e) {
+} catch (DeleteSubjectException $e) {
     echo $e->showMessage();
 }
 
