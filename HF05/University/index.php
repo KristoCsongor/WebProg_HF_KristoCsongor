@@ -56,3 +56,30 @@ $testStudent2->printGrades();
 // 3) c)
 echo $testStudent2->getAvgGrade() . "<br>";
 echo "Total number of students: " . $univ->getNumberOfStudents();
+
+$testStudent3 = new Student("testname3", "3");
+$testStudent3->setGrades(array(7, 8, 9));
+$testStudent4 = new Student("testname4", "4");
+$testStudent4->setGrades(array(7, 8, 10));
+$testStudent5 = new Student("testname5", "5");
+$testStudent5->setGrades(array(7, 8, 8));
+$testStudent6 = new Student("testname6", "6");
+$testStudent6->setGrades(array(7, 8, 7));
+
+$studentList = array($testStudent3, $testStudent4, $testStudent5, $testStudent6);
+echo "<br><br>Students before sorting<br>";
+
+
+foreach ($studentList as $student) {
+    echo $student . "<br>";
+}
+
+
+usort($studentList, function ($student1, $student2) {
+    return $student1->getAvgGrade() < $student2->getAvgGrade();
+});
+
+echo "<br>Students after sorting<br>";
+foreach ($studentList as $student) {
+    echo $student . "<br>";
+}

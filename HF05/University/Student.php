@@ -74,4 +74,10 @@ class Student
             echo $subjectCode . " - " . $grade . "<br>";
         }
     }
+
+    public function __toString(): string
+    {
+        return "$this->name - " . $this->getAvgGrade();
+    }
+
 }
